@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function validarNome(){
+            var nome = document.getElementById("textoNome").value;
+
+            if(nome.length > 30){
+                alert("Nome invalido!")
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <span>Digite seu nome</span>
+    <input type=""tepe="text" id="textoNome">
+    <input type="button" value="enviar" onclick="validarNome()";>
+    <br>
+    <p id="ptexto"></p>
+
+    </span>
+    
+</body>
+</html>
