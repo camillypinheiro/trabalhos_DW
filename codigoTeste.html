@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Formulario</title>
+    <script>
+    function validarNome(){
+        var nome = document.getElementById("textoNome").value;
+
+        if(nome.length > 30){
+            alert("Nome invalido!")
+        }
+    }
+    function validarCPF(){
+        var cpf = document.getElementById("textoCPF").value;
+
+        if(cpf.length !== 14){
+            alert("Cpf invalido!")
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+    <span>Digite seu nome</span>
+    <input type=""tepe="text" id="textoNome">
+    <br>
+    <span>CPF</span>
+    <input type="text" id="textoCPF">
+    <input type="button" value="Enviar" onclick= "validarNome(); validarCPF()";>
+    <br>
+    <p id = "ptexto"></p>
+
+</body>
+</html>
