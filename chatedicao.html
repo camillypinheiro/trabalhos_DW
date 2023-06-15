@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Formulario</title>
+    <script>
+        function validarNome() {
+            var nome = document.getElementById("textoNome").value;
+
+            if (nome.length > 30) {
+                alert("Nome inválido!");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validarCPF() {
+            var cpf = document.getElementById("textoCPF").value;
+
+            // Validação do CPF
+            if (cpf.length !== 14 || cpf.charAt(3) !== '.' || cpf.charAt(7) !== '.' || cpf.charAt(11) !== '-') {
+                alert("Por favor, insira um CPF válido no formato NNN.NNN.NNN-NN.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validarEmail() {
+            var email = document.getElementById("textoEmail").value;
+
+            if (email.indexOf("@") === -1 || email.indexOf("@") === 0 || email.indexOf("@") === email.length - 1) {
+                alert("O e-mail deve conter um único @ e não pode ser o primeiro nem o último caractere.");
+                return false;
+            }
+
+            if (email.indexOf(".com") === -1 && email.indexOf(".edu") === -1) {
+                alert("O e-mail deve ter o domínio .com ou .edu.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function imprimirMensagem() {
+            var nome = document.getElementById("textoNome").value;
+
+            if (validarNome() && validarCPF() && validarEmail()) {
+                var mensagem = "Olá, " + nome + "! Bem-vindo(a)!";
+                alert(mensagem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <span>Digite seu nome</span>
+    <input type="text" id="textoNome">
+    <br>
+    <span>CPF</span>
+    <input type="text" id="textoCPF">
+    <br>
+    <span>Digite seu email</span>
+    <input type="text" id="textoEmail">
+    <br>
+    <input type="button" value="Enviar" onclick="imprimirMensagem()">
+    <br>
+    <p id="ptexto"></p>
+</body>
+</html>
